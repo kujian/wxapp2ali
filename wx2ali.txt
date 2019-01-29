@@ -42,27 +42,36 @@ axml中的内容替换
 -----------------
 AXML
 	(^||\s+)wx:--->$1a:
-	(^||\s+)bindtap(\W+)--->$1onTap$2
-	(^||\s+)bindlongTap(\W+)--->$1onLongTap$2
-	(^||\s+)bindinput(\W+)--->$1onInput$2
-	(^||\s+)bindchange(\W+)--->$1onChange$2
-	(^||\s+)bindinput(\W+)--->$1onInput$2
-	(^||\s+)bindfocus(\W+)--->$1onFocus$2
-	(^||\s+)bindblur(\W+)--->$1onBlur$2
-	(^||\s+)bindconfirm(\W+)--->$1onConfirm$2
-	(^||\s+)bindsubmit(\W+)--->$1onSubmit$2
-	(^||\s+)bindreset(\W+)--->$1onReset$2
-	(^||\s+)bindtouchstart(\W+)--->$1onTouchStart$2
-	(^||\s+)bindtouchmove(\W+)--->$1onTouchMove$2
-	(^||\s+)bindtouchend(\W+)--->$1onTouchEnd$2
-	(^||\s+)bindtouchcancel(\W+)--->$1onTouchCancel$2
-	(^||\s+)bindlongtap(\W+)--->$1onLongTap$2
-	(^||\s+)bindmarkertap(\W+)--->$1onMarkerTap$2
-	(^||\s+)bindcallouttap(\W+)--->$1onCalloutTap$2
-	(^||\s+)bindcontroltap(\W+)--->$1onControlTap$2
-	(^||\s+)bindregionchange(\W+)--->$1onRegionChange$2
+	(^||\s+)bindtap\s*=--->$1onTap=
+	(^||\s+)bindlongTap\s*=--->$1onLongTap=
+	(^||\s+)bindinput\s*=--->$1onInput=
+	(^||\s+)bindchange\s*=--->$1onChange=
+	(^||\s+)bindinput\s*=--->$1onInput=
+	(^||\s+)bindfocus\s*=--->$1onFocus=
+	(^||\s+)bindblur\s*=--->$1onBlur=
+	(^||\s+)bindconfirm\s*=--->$1onConfirm=
+	(^||\s+)bindsubmit\s*=--->$1onSubmit=
+	(^||\s+)bindreset\s*=--->$1onReset=
+	(^||\s+)bindtouchstart\s*=--->$1onTouchStart=
+	(^||\s+)bindtouchmove\s*=--->$1onTouchMove=
+	(^||\s+)bindtouchend\s*=--->$1onTouchEnd=
+	(^||\s+)bindtouchcancel\s*=--->$1onTouchCancel=
+	(^||\s+)bindmarkertap\s*=--->$1onMarkerTap=
+	(^||\s+)bindcallouttap\s*=--->$1onCalloutTap=
+	(^||\s+)bindcontroltap\s*=--->$1onControlTap=
+	(^||\s+)bindregionchange\s*=--->$1onRegionChange=
+	(^||\s+)bindscrolltoupper\s*=--->$1onScrollToUpper=
+	(^||\s+)bindscrolltolower\s*=--->$1onScrollToLower=
+	(^||\s+)bindscroll\s*=--->$1onScroll=
 	(^||\s+)canvas-id(\W+)--->$1id$2
-	(^||\s+)bind(\w+)(\W+)--->$1on$2$3
+	(^||\s+)on([A-Z]{1}\w+)\s*=--->$1bind$2=
+	(\w+)\.wxml(\W)--->$1.axml$2 # import include替换文件axml为wxml
+end
+-----------------
+ACSS中的内容替换
+-----------------
+ACSS
+	(@import\s*['"]\S*?)\.acss(['"])--->$1.wxss$2
 end
 -----------------
 json中的内容替换
