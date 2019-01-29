@@ -51,6 +51,10 @@
 2. js文件有进行过ast转换 可以转换到方法名称
 
 ## 更新: ##
+	v1.1.8
+		fix:修复scroll-view组件事件匹配
+		fix:修复只匹配绑定事件，不匹配其他函数
+		新增匹配wxml中的include和import
 	v1.1.7
 		解决babel-plugin-transform-object-rest-spread插件未找到问题
 		https://github.com/foxitdog/wx2ali/issues/9
