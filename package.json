@@ -1,6 +1,6 @@
 {
-  "name": "wx2ali",
-  "version": "1.1.8",
+  "name": "wxapp2ali",
+  "version": "1.1.9",
   "scripts": {
     "start": "node ./index.js"
   },
@@ -20,9 +20,9 @@
     "amp",
     "antmp"
   ],
-  "homepage": "https://github.com/foxitdog/wx2ali",
+  "homepage": "https://github.com/kujian/wxapp2ali",
   "bugs": {
-    "url": "https://github.com/foxitdog/wx2ali/issues"
+    "url": "https://github.com/kujian/wxapp2ali/issues"
   },
   "main": "index.js",
   "devDependencies": {
