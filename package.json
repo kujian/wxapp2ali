@@ -11,7 +11,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0"
   },
   "bin": {
-    "wx2ali": "index.js"
+    "wxapp2ali": "index.js"
   },
   "description": "微信小程序转支付宝小程序工具",
   "keywords": [

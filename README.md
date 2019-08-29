@@ -1,4 +1,7 @@
 # 微信小程序转支付宝小程序 #
+
+原仓库：[https://github.com/foxitdog/wx2ali](https://github.com/foxitdog/wx2ali)，把原来仓库的Java版本去掉，更换了一些规则，修复了bug，详情见1.19日志，新开仓库是为了方便后面维护一个node版本，因为原作者的版本包含了Java版本，很容易混淆，造成维护麻烦。为了方便，我新增了一个npm包wxapp2ali。使用时把原仓库的wx2ali改为wxapp2ali。
+
 ###说明：###
 	这是一个将微信小程序中的大多数与支付宝小程序功能相关，格式相似的api与属性转化为支付包小程序的格式
 	其中包含了json、js、wxml的转换，但是转换只是治标并不治本，所以转化结束的源码中的一些错误还是需要靠自己进行解决。
@@ -6,16 +9,16 @@
 ## 环境配置： ##
 	node.js
 ## 安装 ##
-	npm i wx2ali -g
+	npm i wxapp2ali -g
 
 ## 使用 ##
-**如果是旧版本请命令行中输入npm update wx2ali -g进行更新**
+**如果是旧版本请命令行中输入npm update wxapp2ali -g进行更新**
 
 1. 	复制微信小程序的源码一份；
-1. 	wx2ali --getConfig获取配置文件路径 按照需要修改配置并保存
-1.  wx2ali --start
+1. 	wxapp2ali --getConfig获取配置文件路径 按照需要修改配置并保存
+1.  wxapp2ali --start
 1. 	等待处理完成。
-1. 或者可以通过 wx2ali --path path路径   开始转换
+1. 或者可以通过 wxapp2ali --path path路径   开始转换
 
 
 ![](https://github.com/foxitdog/wx2ali/blob/master/img/usage.gif)
@@ -30,12 +33,13 @@
 
 ## 文件: ##
 	node
-	  --wx2ali.txt //配置
+	  --wxapp2ali.txt //配置
  	  --package.json
 	  --index.js //源码
 	  lib
         --JSApiPropReplace.js //api属性替换
-[点击进入github](https://github.com/foxitdog/wx2ali "wx2ali转换")
+		
+[点击进入github](https://github.com/kujian/wxapp2ali "wx2ali转换")
 
 ## 转换原则: ##
 
@@ -47,6 +51,10 @@
 6. js文件有进行过ast转换 可以转换到方法名称
 
 ## 更新: ##
+
+	v1.1.9
+		fix:修复转换绑定事件时会默认把事件名也一起转换了，例如 ```bindchage = "bindchange"```转换后是 ```onChange = "onChange"```，这是错误的，转换只需要转换前面的bindchange，后面的还是保留的。修复后转换为 ```onChange = "bindchange"
+		fix:import导入时会文件类型同时也要调整。
 	v1.1.8
 		fix:修复scroll-view组件事件匹配
 		fix:修复只匹配绑定事件，不匹配其他函数
@@ -83,5 +91,4 @@
 		添加js文件简单转换
 		添加axml文件简单的转换
 
-<div>有问题可以联系895423140@qq.com 或者提交issue。</div>
 	
