@@ -1,6 +1,2 @@
-.settings
-.project
-bin
-node/node_modules
-xx
-node/package-lock.json
+node_modules
+package-lock.json
